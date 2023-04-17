@@ -20,4 +20,12 @@
 ###< symfony/phpunit-bridge ###
 
 /.vscode/
+/public/.DS_Store
+.DS_Store
 /public/uploads/
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
