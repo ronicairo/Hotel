@@ -16,3 +16,13 @@ html, body {
     width: 100vw;
     object-fit: cover;
 }
+
+.bloc-spa{
+    display: flex;
+    justify-content: space-around;
+}
+
+.taille_imgspa{
+    width: 286px;
+    height: 200px;
+}
