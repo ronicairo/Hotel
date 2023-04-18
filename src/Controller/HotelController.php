@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Form\ContactFormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HotelController extends AbstractController
 {
@@ -19,4 +21,23 @@ class HotelController extends AbstractController
     {
         return $this->render('hotel/acces.html.twig');
     }
+
+    #[Route('/contact', name: 'show_contact')]
+    public function showContact(Request $request): Response
+    {
+        $form = $this->createForm(ContactFormType::class)
+        ->handleRequest($request);
+    
+        if($form->isSubmitted() && $form->isValid()) {
+
+        $this->addFlash('success', "Votre demande a bien été envoyée !");
+    
+        }
+        
+    return $this->render('hotel/contact_form.html.twig', [
+        'form' => $form->createView()
+    ]);
+
+}
+
 }
