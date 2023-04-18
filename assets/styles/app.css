@@ -17,6 +17,7 @@ html, body {
     object-fit: cover;
 }
 
+
 .hauteur{
     display: flex;
     flex-direction: column;
@@ -24,4 +25,14 @@ html, body {
     justify-content: space-around;
     height: 200vh;
     padding: 10px;
+}
+.bloc-spa{
+    display: flex;
+    justify-content: space-around;
+}
+
+.taille_imgspa{
+    width: 286px;
+    height: 200px;
+
 }

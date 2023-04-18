@@ -42,18 +42,22 @@
 				</li>
 
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<a class="nav-link dropdown-toggle" href="#"role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Le Spa
 					</a>
 					<ul class="dropdown-menu">
 						<li>
+
 							<a class="dropdown-item" href="">Spa avec soin Détente</a>
+
+							<a class="dropdown-item" href="{{path('show_spa_detente')}}" >Spa avec soin Détente</a>
+
 						</li>
 						<li>
-							<a class="dropdown-item" href="">Spa avec soin relaxant</a>
+							<a class="dropdown-item" href="{{path('show_spa_relaxant')}}">Spa avec soin relaxant</a>
 						</li>
 						<li>
-							<a class="dropdown-item" href="">Spa avec soin Plaisir</a>
+							<a class="dropdown-item" href="{{path('show_spa_plaisir')}}">Spa avec soin Plaisir</a>
 						</li>
 					</ul>
 				</li>
@@ -94,8 +98,7 @@
                 <li class="nav-item">
 					<a class="nav-link" href="">Se connecter</a>
 				</li>
-
-
+				
 			</ul>
 			{# <form class="d-flex" role="search">
 										<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
