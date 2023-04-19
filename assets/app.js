@@ -10,3 +10,7 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })

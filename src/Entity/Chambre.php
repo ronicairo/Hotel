@@ -23,23 +23,16 @@ class Chambre
     private ?string $titre = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $description_courte = null;
+    private ?string $descriptionCourte = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $description_longue = null;
+    private ?string $descriptionLongue = null;
 
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
     #[ORM\Column(length: 4)]
-    private ?string $prix_journalier = null;
-
-    #[ORM\ManyToOne(inversedBy: 'chambre_id')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Commande $commande = null;
-
-    #[ORM\OneToOne(mappedBy: 'slider_chambre', cascade: ['persist', 'remove'])]
-    private ?Slider $slider = null;
+    private ?string $prixJournalier = null;
 
     public function getId(): ?int
     {
@@ -60,24 +53,24 @@ class Chambre
 
     public function getDescriptionCourte(): ?string
     {
-        return $this->description_courte;
+        return $this->descriptionCourte;
     }
 
-    public function setDescriptionCourte(string $description_courte): self
+    public function setDescriptionCourte(string $descriptionCourte): self
     {
-        $this->description_courte = $description_courte;
+        $this->descriptionCourte = $descriptionCourte;
 
         return $this;
     }
 
     public function getDescriptionLongue(): ?string
     {
-        return $this->description_longue;
+        return $this->descriptionLongue;
     }
 
-    public function setDescriptionLongue(string $description_longue): self
+    public function setDescriptionLongue(string $descriptionLongue): self
     {
-        $this->description_longue = $description_longue;
+        $this->descriptionLongue = $descriptionLongue;
 
         return $this;
     }
@@ -96,41 +89,12 @@ class Chambre
 
     public function getPrixJournalier(): ?string
     {
-        return $this->prix_journalier;
+        return $this->prixJournalier;
     }
 
-    public function setPrixJournalier(string $prix_journalier): self
+    public function setPrixJournalier(string $prixJournalier): self
     {
-        $this->prix_journalier = $prix_journalier;
-
-        return $this;
-    }
-
-    public function getCommande(): ?Commande
-    {
-        return $this->commande;
-    }
-
-    public function setCommande(?Commande $commande): self
-    {
-        $this->commande = $commande;
-
-        return $this;
-    }
-
-    public function getSlider(): ?Slider
-    {
-        return $this->slider;
-    }
-
-    public function setSlider(Slider $slider): self
-    {
-        // set the owning side of the relation if necessary
-        if ($slider->getSliderChambre() !== $this) {
-            $slider->setSliderChambre($this);
-        }
-
-        $this->slider = $slider;
+        $this->prixJournalier = $prixJournalier;
 
         return $this;
     }
