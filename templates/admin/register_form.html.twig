@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription | HouseHotel
+{% endblock %}
+
+{% block body %}
+
+
+<div class="row">
+        <div class="col-10 mx-auto my-4">
+
+            <h2 class="text-center">Les administrateurs</h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    {# <th>Role</th> #}
+                    <th>Mot de passe</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Civilité</th>
+                    <th>Création</th>
+                    <th>...</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for membre in membres %}
+                    <tr>
+                        <td>{{ membre.id }}</td>
+                        {# <td>{{ membre.role }}</td> #}
+                        <td>{{ membre.prenom }}</td>
+                        <td>{{ membre.nom }}</td>
+                        <td>{{ membre.email }}</td>
+                        <td>{{ membre.civilite }}</td>
+                        <td>{{ membre.createdAt | date('d/m/Y') }}</td>
+                        <td>{{ membre.updatedAt | date('d/m/Y') }}</td>
+                        <td>
+                            <a href="" class="text-info" title="Restaurer l'article"><i class="fa-solid fa-trash-arrow-up"></i></a>
+                            <a href="" class="text-danger" title="Supprimer définitivement l'article" onclick="return confirm('Voulez-vous supprimer définitivement cet article ?')"><i class="fa-solid fa-times-circle"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7" class="bg-warning text-center">Aucun article dans la poubelle</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+	<h1 class="text-center my-4">
+		Créer se compte</h1>
+
+	<div class="row">
+		<div class="col-8 mx-auto">
+
+			{{form_start(form)}}
+
+			<div
+				class="row">
+				{# <div class="col-6">{{form_row(form.role)}}</div> #}
+				<div class="col-6">{{form_row(form.password)}}</div>
+				<div class="col-6">{{form_row(form.prenom)}}</div>
+				<div class="col-6">{{form_row(form.nom)}}</div>
+			</div>
+
+			<div class="row">
+				{{form_row(form.civilite)}}
+			</div>
+			<div class="row">
+				<div class="col-6">{{form_row(form.email)}}</div>
+
+			</div>
+
+			{{form_end(form)}}
+		</div>
+	</div>
+
+{% endblock %}
