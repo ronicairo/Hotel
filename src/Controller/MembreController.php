@@ -29,10 +29,10 @@ class MembreController extends AbstractController
     #[Route('/inscription', name:'register', methods: ['GET', 'POST'])]
     public function register(Request $request, MembreRepository $repository, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $entityManager): Response
     {
-        if ($this->getUser()) {
-            $this->addFlash('warning', "Vous êtes déja membre. <a href='/logout'>Deconnexion </a>");
-            return $this->redirectToRoute('show_home');
-        }
+        // if ($this->getUser()) {
+        //     $this->addFlash('warning', "Vous êtes déja membre. <a href='/logout'>Deconnexion </a>");
+        //     return $this->redirectToRoute('show_home');
+        // }
         $membre = new Membre();
 
         $form = $this->createForm(MembreFormType::class, $membre)
