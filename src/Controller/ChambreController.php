@@ -148,9 +148,5 @@ public function hardDeleteChambre(Chambre $chambre, ChambreRepository $repositor
         }
     } // end handleFile()
 
-    #[Route('/', name: 'show_chambre', methods:['GET'])]
-    public function showHome(): Response
-    {
-        return $this->render('chambre/show_chambre.html.twig');
-    }
+
 }

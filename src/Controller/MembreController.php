@@ -45,7 +45,7 @@ class MembreController extends AbstractController
             $membre->setCreatedAt(new DateTime());
             $membre->setUpdatedAt(new DateTime());
 
-            $membre->setPassword($passwordHasher->hashPassword($membre, $membre->getPassword()));
+            // $membre->setPassword($passwordHasher->hashPassword($membre, $membre->getPassword()));
 
             $membre->setRoles(['ROLE_ADMIN']);
 
