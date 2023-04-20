@@ -42,6 +42,9 @@ class Commande
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Chambre $chambre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -127,6 +130,18 @@ class Commande
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getChambre(): ?Chambre
+    {
+        return $this->chambre;
+    }
+
+    public function setChambre(?Chambre $chambre): self
+    {
+        $this->chambre = $chambre;
 
         return $this;
     }
