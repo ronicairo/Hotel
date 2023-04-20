@@ -18,11 +18,11 @@ class CommandeFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('date_debut', DateType::class, [
+            ->add('dateDebut', DateType::class, [
                 'label' => 'Arrivée',
                 'widget' => 'single_text'
             ])
-            ->add('date_fin', DateType::class, [
+            ->add('dateFin', DateType::class, [
                 'label' => 'Départ',
                 'widget' => 'single_text'
             ])

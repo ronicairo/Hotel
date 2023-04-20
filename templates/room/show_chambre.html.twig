@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChambreController!
+{% endblock %}
+
+{% block body %}
+
+		{% for chambre in chambres %}
+	
+
+	<h1></h1>
+	<div class="row featurette text-center">
+		<div class="col-md-7">
+			<h2 class="featurette-heading fw-normal lh-1">{{ chambre.titre}} <br>
+		
+			</h2>
+			<p class="lead">{{ chambre.descriptionLongue}}</p>
+		</div>
+		<div class="col-md-5 mt-4">
+			<a href="{{ path('reservation_chambre', {'id': chambre.id}) }}"><img width="300" height="300" class="img-fluid" src="{{ asset('uploads/' ~ chambre.photo) }}" alt="{{ chambre.titre }}"></a>
+
+	</div>
+</div>
+
+	</div>
+
+    	{% endfor %}
+</div>{% endblock %}

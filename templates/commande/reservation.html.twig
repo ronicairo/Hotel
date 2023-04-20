@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Réservation | Hôtel House
+{% endblock %}
+
+{% block body %}
+
+
+	
+
+	<h1></h1>
+	<div class="row featurette text-center">
+		<div class="col-md-7">
+        <p>{{ chambre.id }}</p>
+			<h2 class="featurette-heading fw-normal lh-1">{{ chambre.titre}} <br>
+		
+			</h2>
+			<p class="lead">{{ chambre.descriptionLongue}}</p>
+		</div>
+		<div class="col-md-5 mt-4">
+			<img width="300" height="300" class="img-fluid" src="{{ asset('uploads/' ~ chambre.photo) }}" alt="{{ chambre.titre }}">
+
+
+
+	</div>
+</div>
+
+	</div>
+
+
+{{ form(form)}}
+
+{% endblock %}
+
+
