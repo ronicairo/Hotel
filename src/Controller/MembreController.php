@@ -69,5 +69,4 @@ class MembreController extends AbstractController
         ]);
     }
 
-
 }

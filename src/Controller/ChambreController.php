@@ -99,6 +99,7 @@ $chambres=$entityManager->getRepository(Chambre::class)->findAll();
             'chambres' => $chambres
 
         ]);
+    
     } // end updateArticle()
 
 
@@ -146,4 +147,10 @@ public function hardDeleteChambre(Chambre $chambre, ChambreRepository $repositor
             // code a exécuter en cas d'erreur
         }
     } // end handleFile()
+
+    #[Route('/', name: 'show_chambre', methods:['GET'])]
+    public function showHome(): Response
+    {
+        return $this->render('chambre/show_chambre.html.twig');
+    }
 }
