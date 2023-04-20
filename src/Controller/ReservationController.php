@@ -39,9 +39,10 @@ class ReservationController extends AbstractController
     
         if($form->isSubmitted() && $form->isValid()) {
 
+            // $commande->setPrixTotal($chambre->getPrixJournalier() * ($commande->getDateFin() - $commande->getDateDebut()));
+
             $commande->setCreatedAt(new DateTime());
             $commande->setUpdatedAt(new DateTime());
-            $commande->setPrixTotal('300');
 
             $repository->save($commande, true);
 
