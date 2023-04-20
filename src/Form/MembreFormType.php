@@ -45,8 +45,8 @@ class MembreFormType extends AbstractType
                     new Length([
                         'min' => 4,
                         'max' => 255,
-                        'minMessage' =>'Votre email doit comporter au minimum {{ limit }} caractères.(email : {{ value }})',
-                        'maxMessage' =>'Votre email doit comporter au maximum {{ limit }} caractères.(email : {{ value }})',
+                        'minMessage' =>'Votre mot de passe doit comporter au minimum {{ limit }} caractères.(password: {{ value }})',
+                        'maxMessage' =>'Votre mot de passe doit comporter au maximum {{ limit }} caractères.(password : {{ value }})',
                     ]),
                 ],
             ])
