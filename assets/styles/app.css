@@ -17,7 +17,6 @@ html, body {
     object-fit: cover;
 }
 
-
 .hauteur{
     display: flex;
     flex-direction: column;

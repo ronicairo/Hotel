@@ -7,7 +7,6 @@
 
 
 	<main>
-
 		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
 				<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -16,38 +15,38 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="hotel" width="100" src="./hotel.jpg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
-
-					<div class="container">
-						<div class="carousel-caption text-start">
-							<h1>HOTEL HOUSE</h1>
-
-							<p>
-								<a class="btn btn-lg btn-primary" href="#">Découvrez nos chambres</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img class="hotel" width="100" src="./restaurant.jpg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+					<img class="hotel" height="760" src="./hotelll.jpg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
 
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>Ouvert 24h/24</h1>
+							<h1>HOTEL HOUSE</h1>
+
 							<p>
-								<a class="btn btn-lg btn-primary" href="#">Découvrez nos restaurants</a>
+								<a class="btn btn-lg btn-dark" href="#">Hôtel House - Découvrez nos chambres</a>
 							</p>
 						</div>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="hotel" width="100" src="./spa.jpg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+					<img class="hotel" height="760" src="./restaurant.jpg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
 
 					<div class="container">
-						<div class="carousel-caption text-end">
-							<h1>Soin et relaxation</h1>
+						<div class="carousel-caption">
+							<h1>Restaurant</h1>
 							<p>
-								<a class="btn btn-lg btn-primary" href="#">Découvrez nos Spa</a>
+								<a class="btn btn-lg btn-dark" href="#">Hôtel House - Découvrez notre restaurant</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class="hotel" height="760" src="./spaa.jpg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Soin &#38; Relaxation</h1>
+							<p>
+								<a class="btn btn-lg btn-dark" href="#">Hôtel House - Découvrez nos SPA</a>
 							</p>
 						</div>
 					</div>
@@ -74,30 +73,30 @@
 			<!-- Three columns of text below the carousel -->
 			<div class="row p-5">
 				<div class="col-lg-4">
-					<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="./chambre.jpg" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+					<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="./ch1.jpg" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text>
 
 					<h2 class="fw-normal mt-3">Chambre</h2>
-					<p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+					<p>Venez découvrir nos chambres pour votre plus grand confort !</p>
 					<p>
-						<a class="btn btn-secondary" href="#">View details &raquo;</a>
+						<a class="btn btn-dark" href="{{ path('show_chambre') }}">Découvrir les chambres</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
 				<div class="col-lg-4">
-					<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="./restaurant2.jpg" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+					<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="./resto2.webp" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text>
 					<h2 class="fw-normal mt-3">Restaurant</h2>
-					<p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+					<p>Nos plats sont confectionnés à la minute par notre chef cuisinier chaque jour.</p>
 					<p>
-						<a class="btn btn-secondary" href="#">View details &raquo;</a>
+						<a class="btn btn-dark" href="{{path('show_restaurant') }}">Découvrir la carte</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
 				<div class="col-lg-4">
-					<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="./spa2.jpg" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+					<img class="bd-placeholder-img rounded-circle" width="140" height="140" src="./spa.webp" role="img" aria-label="Placeholder: 140x140" preserveaspectratio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text>
 					<h2 class="fw-normal mt-3">Spa</h2>
-					<p>And lastly this, the third column of representative placeholder content.</p>
+					<p>Détendez-vous et offrez vous un massage dont vous vous rappellerez longtemps.</p>
 					<p>
-						<a class="btn btn-secondary" href="#">View details &raquo;</a>
+						<a class="btn btn-dark" href="{{ path('show_spa_detente') }}">Découvrir les soins</a>
 					</p>
 				</div>
 				<!-- /.col-lg-4 -->
