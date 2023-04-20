@@ -16,13 +16,12 @@
                 <tr>
                     <th>#</th>
                     <th>Rôle</th> 
-                    <th>Mot de passe</th>
+                    <th>Mot de passe</th> 
                     <th>Prénom</th>
                     <th>Nom</th>
                     <th>Email</th>
                     <th>Civilité</th>
                     <th>Création</th>
-                    <th>...</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -31,6 +30,7 @@
                     <tr>
                         <td>{{ membre.id }}</td>
                         <td>{{ membre.roles | first }}</td>
+                        <td>{{ membre.password }}</td>
                         <td>{{ membre.prenom }}</td>
                         <td>{{ membre.nom }}</td>
                         <td>{{ membre.email }}</td>
@@ -38,8 +38,12 @@
                         <td>{{ membre.createdAt | date('d/m/Y') }}</td>
                         <td>{{ membre.updatedAt | date('d/m/Y') }}</td>
                         <td>
-                            <a href="" class="text-info" title="Restaurer l'article"><i class="fa-solid fa-trash-arrow-up"></i></a>
-                            <a href="" class="text-danger" title="Supprimer définitivement l'article" onclick="return confirm('Voulez-vous supprimer définitivement cet article ?')"><i class="fa-solid fa-times-circle"></i></a>
+<a href="{{ path('soft_delete_membre', {'id': membre.id}) }}" class="btn btn-danger" title="Supprimer le membre" onclick="return confirm('Cette action supprimera le membre de la base Voulez-vous continuer ?' )">
+									<i class="bi bi-trash3"></i>
+								</a>
+                                <a href="{{ path('update_membre', {'id': membre.id}) }}" class="btn btn-warning" title="Modifier le membre" onclick="return confirm('Cette action modifiera le membre de la base Voulez-vous continuer ?' )">
+									<i class="bi bi-pencil-square"></i>
+								</a>
                         </td>
                     </tr>
                 {% else %}
@@ -54,7 +58,7 @@
     </div>
 
 	<h1 class="text-center my-4">
-		Créer se compte</h1>
+		Créer ce compte</h1>
 
 	<div class="row">
 		<div class="col-8 mx-auto">
