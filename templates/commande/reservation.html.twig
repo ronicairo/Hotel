@@ -14,11 +14,8 @@
 
 	<div class="row featurette text-center">
 		<div class="col-md-7">
-			<h2 class="featurette-heading fw-normal lh-1">{{ chambre.titre}}
-				<br>
-
-			</h2>
-			<p class="lead">{{ chambre.descriptionLongue}}</p>
+			<h2 class="featurette-heading fw-normal lh-1">{{ chambre.titre }}</h2>
+			<p class="lead">{{ chambre.descriptionLongue }}</p>
 		</div>
 		<div class="col-md-5 mt-4">
 			<img width="300" height="300" class="img-fluid" src="{{ asset('uploads/' ~ chambre.photo) }}" alt="{{ chambre.titre }}">
@@ -29,5 +26,5 @@
 
 </div>
 
-	{{ form(form)}}
+	{{ form(form) }}
 {% endblock %}
