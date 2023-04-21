@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 class ChambreController extends AbstractController
 {
     #[Route('/ajouter-une-chambre', name: 'create_chambre', methods: ['GET', 'POST'])]
-    public function createChambre(ChambreRepository $repository, Request $request, SluggerInterface $slugger,EntityManagerInterface $entityManager): Response
+    public function createChambre(ChambreRepository $repository, Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
         $chambre = new Chambre();
 
@@ -29,7 +29,7 @@ class ChambreController extends AbstractController
 
             $chambre->setCreatedAt(new DateTime());
             $chambre->setUpdatedAt(new DateTime());
-       
+
 
             # Set de la relation entre Article et User
             // $chambre->setAuthor($this->getUser());
@@ -47,19 +47,18 @@ class ChambreController extends AbstractController
             // return $this->redirectToRoute('create_chambre');
         } // end if($form)
 
-$chambres=$entityManager->getRepository(Chambre::class)->findAll();
-// dd($chambres);
+        $chambres = $entityManager->getRepository(Chambre::class)->findAll();
+        // dd($chambres);
 
         return $this->render('admin/chambre/create_chambre.html.twig', [
             'form' => $form->createView(),
-            'chambres'=>$chambres,
-          
+            'chambres' => $chambres,
+
         ]);
-    
     } // end createArticle()
 
     #[Route('/modifier-une-chambre{id}', name: 'update_chambre', methods: ['GET', 'POST'])]
-    public function updateChambre(Chambre $chambre, Request $request, ChambreRepository $repository, SluggerInterface $slugger,EntityManagerInterface $entityManager): Response
+    public function updateChambre(Chambre $chambre, Request $request, ChambreRepository $repository, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
         $currentPhoto = $chambre->getPhoto();
 
@@ -72,7 +71,7 @@ $chambres=$entityManager->getRepository(Chambre::class)->findAll();
 
             $chambre->setCreatedAt(new DateTime());
             $chambre->setUpdatedAt(new DateTime());
-        
+
 
             // $chambre->setAuthor($this->getUser());
 
@@ -83,8 +82,7 @@ $chambres=$entityManager->getRepository(Chambre::class)->findAll();
                 $this->handleFile($photo, $chambre, $slugger);
                 # Si une nouvelle photo est uploadé on va supprimer l'ancienne :
                 unlink($this->getParameter('uploads_dir') . DIRECTORY_SEPARATOR . $currentPhoto);
-            }
-            else {
+            } else {
                 $chambre->setPhoto($currentPhoto);
             } // end if($photo)
 
@@ -93,13 +91,12 @@ $chambres=$entityManager->getRepository(Chambre::class)->findAll();
             $this->addFlash('success', "L'article a bien eté modifié avec succès !");
             // return $this->redirectToRoute(('show_dashboard'));
         }
-        $chambres=$entityManager->getRepository(Chambre::class)->findAll();
+        $chambres = $entityManager->getRepository(Chambre::class)->findAll();
         return $this->render('admin/chambre/create_chambre.html.twig', [
             'form' => $form->createView(),
             'chambres' => $chambres
 
         ]);
-    
     } // end updateArticle()
 
 
@@ -112,21 +109,21 @@ $chambres=$entityManager->getRepository(Chambre::class)->findAll();
 
 
 
-// ------------------------------ HARD-DELETE-ARTICLE -------------------------------
-#[Route('/supprimer-une-chambre/{id}', name: 'hard_delete_chambre', methods: ['GET'])]
-public function hardDeleteChambre(Chambre $chambre, ChambreRepository $repository): Response
+    // ------------------------------ HARD-DELETE-ARTICLE -------------------------------
+    #[Route('/supprimer-une-chambre/{id}', name: 'hard_delete_chambre', methods: ['GET'])]
+    public function hardDeleteChambre(Chambre $chambre, ChambreRepository $repository): Response
 
-{
-    $photo = $chambre->getPhoto();
+    {
+        $photo = $chambre->getPhoto();
 
-    $repository->remove($chambre, true);
+        $repository->remove($chambre, true);
 
-    unlink($this->getParameter('uploads_dir') . DIRECTORY_SEPARATOR . $photo);
+        unlink($this->getParameter('uploads_dir') . DIRECTORY_SEPARATOR . $photo);
 
-    $this->addFlash('success', "La chambre a bien été supprimé définitivement de la base.");
-    return $this->redirectToRoute('create_chambre');
-} // end hardDeleteArticle()
-// ----------------------------------------------------------------------------------
+        $this->addFlash('success', "La chambre a bien été supprimé définitivement de la base.");
+        return $this->redirectToRoute('create_chambre');
+    } // end hardDeleteArticle()
+    // ----------------------------------------------------------------------------------
 
 
 

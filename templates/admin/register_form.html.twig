@@ -5,7 +5,13 @@
 
 {% block body %}
 
+    <div class="row">
+        <div class="col-6 mx-auto">
+            {% include 'include/_flashes.html.twig' %}
+        </div>
+    </div>
 
+    
 	<div class="row">
 		<div class="col-10 mx-auto my-4">
 
@@ -67,7 +73,8 @@
 
 			<div
 				class="row">
-				{# <div class="col-6">{{form_row(form.roles)}}</div> #}
+				{# <div class="col-6">{{ form_row(form.roles) }}</div> #}
+
 				<div class="col-6">{{form_row(form.prenom)}}</div>
 				<div class="col-6">{{form_row(form.nom)}}</div>
 			</div>

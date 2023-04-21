@@ -33,9 +33,16 @@ class MembreFormType extends AbstractType
                 ]),
             ],
         ])
-            // ->add('roles', TextType::class,[
-                // 'label'=>"Role"
-            // ])
+        // ->add('roles', ChoiceType::class, [
+        //     'choices'  => [
+        //         'Utilisateur' => "ROLE_USER",
+        //         'Valideur' => "ROLE_VALIDEUR",
+        //         'Administrateur' => "ROLE_ADMIN",                   
+        //     ],
+ 
+        // ])
+    
+
             ->add('password', PasswordType::class, [
                 'label' => "Choisissez un mot de passe fort",
                 'constraints' => [
